@@ -1,0 +1,64 @@
+// Q5 Calculate Employee Bonus
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void CalculateBonus(float fSalary, int iYears)
+{
+    float fBonus = 0.0f;
+
+    if (fSalary <= 0 || iYears < 0)
+    {
+        printf("Invalid input: Salary must be positive and years cannot be negative.\n");
+        return;
+    }
+
+    if (iYears > 10)
+    {
+        fBonus = fSalary * 0.15f;   // 15%
+    }
+    else if (iYears >= 5)
+    {
+        fBonus = fSalary * 0.10f;   // 10%
+    }
+    else
+    {
+        fBonus = fSalary * 0.05f;   // 5%
+    }
+
+    printf("Bonus = %.2f\n", fBonus);
+}
+
+int main()
+{
+    float fSalary = 0.0f;
+    int iYears = 0;
+
+    printf("Enter salary and years of service: ");
+    scanf("%f %d", &fSalary, &iYears);
+
+    CalculateBonus(fSalary, iYears);
+
+    return EXIT_SUCCESS;
+}
+
+////////////////////////////////////////////////
+    //
+    // Test the Program
+    // Tested test Cases
+    // -----------------------------------------------
+    //    Input: 30000 12               
+    //   Output: Bonus = 4500.00
+
+    //
+    //    Input:  20000 7             
+    //   Output:  Bonus = 20000.00
+
+    //     
+    //    Input:  1000 2           
+    //   Output: Bonus = 500.00
+
+    
+
+    //          
+/////////////////////////////////////////////////////
